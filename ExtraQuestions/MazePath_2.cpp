@@ -1,3 +1,12 @@
+/**
+ * Question is we are given a 2D matrix and we have to reach from (0,0) to (n-1,m-1).
+ * 
+ * direction allowed :   R(right),D(down),RD(right diagonal)
+ * 
+ * jump allowed is INF
+ * 
+ * */
+
 #include<bits/stdc++.h>
 using namespace std;
 
