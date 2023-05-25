@@ -27,3 +27,13 @@ public:
         return s.substr(st,en-st+1);
     }
 };
+
+/**
+ * 
+ * Palindromic substring
+ * 
+ * 1) Total number of palindromic substring.
+ * 2) Maximum length of palindromic substring.
+ * 3) that palidromic string which has maximum length.
+ * 
+* */
