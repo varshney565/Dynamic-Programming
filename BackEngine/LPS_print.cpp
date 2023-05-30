@@ -26,7 +26,7 @@ string lps(string s){
 		return go(i,j-1);
 	}
 	
-	go(0,n-1);
+	return go(0,n-1);
 }
 
 int main(){
