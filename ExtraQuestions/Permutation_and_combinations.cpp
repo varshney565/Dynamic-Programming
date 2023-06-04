@@ -68,23 +68,25 @@ int combinations_tab(vector<int> &v,int N,int T){
 	return dp[N][T];
 }
 
+
+/**
+ * As answer of ith state is only dependent on the current state and the previous state.
+ * 
+ * As,
+ * dp[n][target] = dp[n-1][target] + dp[n][target-v[i]]
+ * 
+ * so dp[target] += dp[target-v[i]];
+ * 
+ * */
+
 int combinations_opti(vector<int> &v,int N,int T){
 	vector<int> dp(T+1,0);
+	dp[0] = 1;
 	for(int n = 1 ; n <= N ; n++){
-		vector<int> dp2(T+1,0);
-		for(int target = 0 ; target <= T ; target++){
-			if(target == 0) {
-				dp2[target] = 1;
-				continue;
-			}
-			int count = 0;
+		for(int target = n ; target <= T ; target++){
 			if(target-v[n-1] >= 0)
-				count += dp2[target-v[n-1]];
-			if(n > 1)
-				count += dp[target];
-			dp2[target] = count;
+				dp[target] += dp[target-v[n-1]];
 		}
-		swap(dp2,dp);
 	}
 	return dp[T];
 }
